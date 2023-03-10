@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateEnterprises = exports.deleteEnterprises = exports.createEnterprises = exports.getEnterprises = void 0;
-const enterprises_1 = __importDefault(require("./../models/enterprises"));
+const enterprises_1 = __importDefault(require("../models/enterprises"));
 const getEnterprises = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const enterprises = yield enterprises_1.default.findAll();
@@ -22,16 +22,6 @@ const getEnterprises = (req, res) => __awaiter(void 0, void 0, void 0, function*
     catch (error) {
         return res.status(500).json(error);
     }
-    /* connection.connection.query(
-      "SELECT * FROM enterprises",
-      (err: any, results: any) => {
-        if (err) {
-          console.error("Error querying database:", err);
-          return res.status(500).send("Error querying database.");
-        }
-        return res.status(200).send(results);
-      }
-    ); */
 });
 exports.getEnterprises = getEnterprises;
 const createEnterprises = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -59,17 +49,6 @@ const createEnterprises = (req, res) => __awaiter(void 0, void 0, void 0, functi
     catch (error) {
         return res.status(500).json(error);
     }
-    /* const enterprise: Enterprises = req.body.data;
-    connection.connection.query(
-      `INSERT INTO enterprises (name,nit,phone,address) VALUES ('${enterprise.name}','${enterprise.nit}','${enterprise.phone}','${enterprise.address}');`,
-      (err: any, results: any) => {
-        if (err) {
-          console.error("Error querying database:", err);
-          return res.status(500).send("Error querying database.");
-        }
-        return res.status(200).send(results);
-      }
-    ); */
 });
 exports.createEnterprises = createEnterprises;
 const deleteEnterprises = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -91,16 +70,6 @@ const deleteEnterprises = (req, res) => __awaiter(void 0, void 0, void 0, functi
     catch (error) {
         return res.status(500).json(error);
     }
-    /* connection.connection.query(
-      `DELETE FROM enterprises WHERE id='${req.body.id}'`,
-      (err: any, results: any) => {
-        if (err) {
-          console.error("Error querying database:", err);
-          return res.status(500).send("Error querying database.");
-        }
-        return res.status(200).send(results);
-      }
-    ); */
 });
 exports.deleteEnterprises = deleteEnterprises;
 const updateEnterprises = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -124,17 +93,6 @@ const updateEnterprises = (req, res) => __awaiter(void 0, void 0, void 0, functi
     catch (error) {
         return res.status(500).json(error);
     }
-    /* const enterprise: Enterprises = req.body.body;
-    connection.connection.query(
-      `UPDATE enterprises SET name ='${enterprise.name}', nit = '${enterprise.nit}', phone = '${enterprise.phone}',address='${enterprise.address}'  WHERE id='${enterprise.id}'`,
-      (err: any, results: any) => {
-        if (err) {
-          console.error("Error querying database:", err);
-          return res.status(500).send("Error querying database.");
-        }
-        return res.status(200).send(results);
-      }
-    ); */
 });
 exports.updateEnterprises = updateEnterprises;
 //# sourceMappingURL=enterprises.js.map

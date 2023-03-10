@@ -1,4 +1,4 @@
-import { login } from "./../controllers/user";
+import { login } from "../service/user";
 
 import { Router } from "express";
 

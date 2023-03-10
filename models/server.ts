@@ -1,8 +1,8 @@
 import { Application } from "express";
-import routerEnterprises from "../routes/enterprises.route";
-import routerItem from "../routes/item.routes";
-import routerUser from "../routes/user.route";
-const connection = require("./../models/connection");
+import routerEnterprises from "../controller/enterprises.route";
+import routerItem from "../controller/item.routes";
+import routerUser from "../controller/user.route";
+import db from "../models/connection";
 const express = require("express");
 const cors = require('cors');
 class Server {
@@ -32,7 +32,7 @@ class Server {
     this.app.use(express.static("public"));
   }
   private dbConnection(): void {
-    this.connection = connection;
+    this.connection = db;
   }
   public routes(): void {
     this.app.use(this.apiPaths.enterprises, routerEnterprises);

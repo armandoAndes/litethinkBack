@@ -1,10 +1,8 @@
-const mysql = require("mysql");
-const connection = mysql.createConnection({
+import { Sequelize } from "sequelize";
+
+const db = new Sequelize("liteth", "root", "moar2314", {
   host: "34.136.39.237",
-  user: "root",
-  password: "moar2314",
-  database: "liteth",
+  dialect: "mysql",
 });
-module.exports = {
-  connection,
-};
+
+export default db;

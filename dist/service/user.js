@@ -25,45 +25,15 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             },
         });
         if (userExist) {
-            return res.status(200).json([userExist]); /* Cuidado en el front */
+            return res.status(200).json([userExist]);
         }
         else {
-            return res.status(404).json('No existe el usuario'); /* Cuidado en el front */
+            return res.status(404).json('No existe el usuario');
         }
     }
     catch (error) {
         return res.status(500).json(error);
     }
-    /* console.log(
-      "REQ",
-      `SELECT * FROM user WHERE name = '${req.body.body.name}' AND password = '${req.body.body.password}'`
-    );
-    connection.connection.query(
-      "SELECT * FROM `user` WHERE name = '" +
-        req.body.body.name +
-        "' AND  password ='" +
-        req.body.body.password +
-        "'" +
-        " ;",
-      (err: any, results: any) => {
-        if (err) {
-          console.error("Error querying database:", err);
-          return res.status(500).send("Error querying database.");
-        }
-        return res.status(200).send(results);
-      }
-    ); */
 });
 exports.login = login;
-/*
-
-
-
-
-*/
-/*
-
-
-
-*/
 //# sourceMappingURL=user.js.map

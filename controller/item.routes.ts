@@ -1,6 +1,6 @@
-import { createItem, deleteItem, updateItem } from './../controllers/item';
+import { createItem, deleteItem, updateItem } from '../service/item';
 import { Router } from "express";
-import { getItem } from "../controllers/item";
+import { getItem } from "../service/item";
 
 
 const routerItem = Router();

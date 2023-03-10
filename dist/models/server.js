@@ -3,10 +3,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const enterprises_route_1 = __importDefault(require("../routes/enterprises.route"));
-const item_routes_1 = __importDefault(require("../routes/item.routes"));
-const user_route_1 = __importDefault(require("../routes/user.route"));
-const connection = require("./../models/connection");
+const enterprises_route_1 = __importDefault(require("../controller/enterprises.route"));
+const item_routes_1 = __importDefault(require("../controller/item.routes"));
+const user_route_1 = __importDefault(require("../controller/user.route"));
+const connection_1 = __importDefault(require("../models/connection"));
 const express = require("express");
 const cors = require('cors');
 class Server {
@@ -32,7 +32,7 @@ class Server {
         this.app.use(express.static("public"));
     }
     dbConnection() {
-        this.connection = connection;
+        this.connection = connection_1.default;
     }
     routes() {
         this.app.use(this.apiPaths.enterprises, enterprises_route_1.default);

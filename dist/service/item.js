@@ -27,15 +27,6 @@ const getItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     catch (error) {
         return res.status(500).json(error);
     }
-    /* connection.connection.query(
-      `SELECT * FROM item WHERE enterprise = '${req.body.body.id}'`,
-      (err: any, results: any) => {
-        if (err) {
-          console.error("Error querying database:", err);
-          return res.status(500).send("Error querying database.");
-        }
-      }
-    ); */
 });
 exports.getItem = getItem;
 const createItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -62,20 +53,6 @@ const createItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     catch (error) {
         return res.status(500).json(error);
     }
-    /* const item: Item = req.body.data;
-    console.log("ITE", item);
-    connection.connection.query(
-      `INSERT INTO item (name,enterprise) VALUES ('${item.name}','${Number(
-        item.enterprise
-      )}');`,
-      (err: any, results: any) => {
-        if (err) {
-          console.error("Error querying database:", err);
-          return res.status(500).send("Error querying database.");
-        }
-        return res.status(200).send(results);
-      }
-    ); */
 });
 exports.createItem = createItem;
 const deleteItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -97,16 +74,6 @@ const deleteItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     catch (error) {
         return res.status(500).json(error);
     }
-    /* connection.connection.query(
-      `DELETE FROM item WHERE id='${req.body.id}'`,
-      (err: any, results: any) => {
-        if (err) {
-          console.error("Error querying database:", err);
-          return res.status(500).send("Error querying database.");
-        }
-        return res.status(200).send(results);
-      }
-    ); */
 });
 exports.deleteItem = deleteItem;
 const updateItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
@@ -129,17 +96,6 @@ const updateItem = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     catch (error) {
         return res.status(500).json(error);
     }
-    /* const item: Item = req.body.body;
-    connection.connection.query(
-      `UPDATE item SET name ='${item.name}', enterprise = '${item.enterprise}''  WHERE id='${item.id}'`,
-      (err: any, results: any) => {
-        if (err) {
-          console.error("Error querying database:", err);
-          return res.status(500).send("Error querying database.");
-        }
-        return res.status(200).send(results);
-      }
-    ); */
 });
 exports.updateItem = updateItem;
 //# sourceMappingURL=item.js.map
